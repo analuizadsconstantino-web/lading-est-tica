@@ -6,6 +6,54 @@
 @media(max-width:620px){.daycell{min-height:76px;padding:3px}.calitem{font-size:8px;padding:4px}.weekday{font-size:9px;padding:8px 0}.monthbar h2{font-size:20px}}
 @media(max-width:900px){.layout{grid-template-columns:190px 1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.cards,.brand-assets{grid-template-columns:repeat(2,minmax(0,1fr))}.content{padding:20px}.top{padding:15px 20px}}
 @media(max-width:620px){.layout{display:block}.sidebar{padding:8px;position:sticky;top:0;z-index:10;display:block}.brand{padding:3px 5px 9px;border:0}.brand img{width:37px;height:37px}.brand b{font-size:13px}.brand small{font-size:8px}.nav{display:flex;overflow-x:auto;gap:4px}.nav button{white-space:nowrap;padding:9px;font-size:11px}.hint{display:none}.top{position:static;padding:12px 14px}.content{padding:15px 12px}.intro{display:block}.intro .btn{margin-top:12px}.two,.three{grid-template-columns:1fr}.cards,.brand-assets{grid-template-columns:1fr 1fr}.card{padding:14px}.event{grid-template-columns:50px 1fr}.event .event-actions{grid-column:2}.formgrid{grid-template-columns:1fr}.stat{font-size:25px}}
+
+/* Refinamento visual e de usabilidade */
+:root{--shadow:0 8px 28px rgba(66,44,32,.06);--brown-soft:#8a654d}
+body{background:#f7f3ef}
+.sidebar{background:linear-gradient(165deg,#422c20 0%,#5a3b2b 100%)}
+.brand img{box-shadow:0 3px 12px #00000012}
+.nav button{transition:background .18s ease,transform .18s ease}
+.nav button:hover{transform:translateX(2px)}
+.nav button.active{box-shadow:inset 3px 0 0 var(--nude);background:#ffffff20}
+.top{box-shadow:0 3px 12px #422c2008}
+.content{padding-top:30px}
+.card{box-shadow:0 2px 9px rgba(66,44,32,.025);transition:box-shadow .18s ease,border-color .18s ease}
+.card:hover{border-color:#d9c6b8;box-shadow:var(--shadow)}
+.btn{transition:transform .15s ease,filter .15s ease,box-shadow .15s ease}
+.btn:hover{filter:brightness(1.06);box-shadow:0 4px 12px #422c2015;transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.intro h1{letter-spacing:-.8px}
+.intro p{max-width:620px}
+.stats .card{position:relative;overflow:hidden}
+.stats .card:after{content:"";position:absolute;right:-20px;top:-24px;width:76px;height:76px;border-radius:50%;background:#f6eee8;z-index:0}
+.stats .card>*{position:relative;z-index:1}
+.stat{color:var(--brown);font-variant-numeric:tabular-nums}
+.field input:focus,.field select:focus,.field textarea:focus,.toolbar input:focus,.toolbar select:focus{outline:2px solid #d9bba4;outline-offset:1px;border-color:var(--brown)}
+.event{transition:border-color .18s ease,box-shadow .18s ease}
+.event:hover{border-color:#d8c3b4;box-shadow:0 4px 14px #422c2008}
+.post{box-shadow:0 3px 14px #422c2008;transition:transform .18s ease,box-shadow .18s ease}
+.post:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.monthgrid{box-shadow:0 4px 18px #422c2007}
+.daycell{min-height:122px}
+.daycell.today{box-shadow:inset 0 0 0 2px #c7a58d}
+.calitem{transition:filter .15s ease}
+.calitem:hover{filter:brightness(.96)}
+.notice{border-left:3px solid #b89579}
+.empty{background:#fffdfb}
+#storyIdeas ol{padding-left:20px}
+#storyIdeas .card{display:flex;flex-direction:column}
+#storyIdeas .actions{margin-top:auto;padding-top:12px}
+#assets .post-body b{display:block;overflow-wrap:anywhere}
+@media(max-width:620px){
+ .sidebar{box-shadow:0 4px 16px #21150f30}
+ .nav button.active{box-shadow:inset 0 -2px 0 var(--nude)}
+ .content{padding-top:18px}
+ .daycell{min-height:86px}
+ .stats .card{padding:13px}
+ .intro h1{font-size:31px}
+ .top b{font-size:17px}
+}
+
 </style></head><body><div class="layout">
 <aside class="sidebar"><div class="brand"><img src="https://ana-constantino-estetica-integrativa.onrender.com/assets/logo.webp" alt="Logo Ana Constantino" onerror="this.style.display='none'"><div><b>ANA CONSTANTINO</b><small>ESTÉTICA INTEGRATIVA</small></div></div><nav class="nav" id="nav">
 <button class="active" data-page="inicio">⌂ &nbsp; Visão geral</button><button data-page="calendario">▦ &nbsp; Calendário editorial</button><button data-page="biblioteca">▧ &nbsp; Arquivo de imagens</button><button data-page="stories">▤ &nbsp; Estratégia de Stories</button><button data-page="metricas">↗ &nbsp; Métricas Instagram</button><button data-page="estrategia">◎ &nbsp; Estratégia e metas</button><button data-page="marca">◇ &nbsp; Identidade da marca</button></nav><div class="hint">Painel de trabalho profissional<br>Seus registros ficam salvos neste navegador.</div></aside>
@@ -26,7 +74,7 @@
 const $=id=>document.getElementById(id);
 const get=(k,fallback)=>{try{const x=JSON.parse(localStorage.getItem('ac2_'+k));return x===null?fallback:x}catch(e){return fallback}};
 const put=(k,v)=>{try{localStorage.setItem('ac2_'+k,JSON.stringify(v));return true}catch(e){alert('Não foi possível salvar. O armazenamento do navegador pode estar cheio.');return false}};
-let events=get('events',null),calendarCursor=new Date(2026,10,1),tasks=get('tasks',[{id:1,text:'Planejar os 3 conteúdos da semana',done:false},{id:2,text:'Revisar legendas e chamadas para ação',done:false},{id:3,text:'Separar fotos profissionais',done:false},{id:4,text:'Registrar os Insights do Instagram',done:false}]),metrics=get('metrics',[]),assets=get('assets',[]),goals=get('goals',{posts:12,followers:100,bookings:10,focus:'Fortalecer autoridade em estética facial, educar sobre protocolos personalizados e converter interesse em avaliações.'});
+let events=get('events',null),calendarCursor=new Date(new Date().getFullYear(),new Date().getMonth(),1),tasks=get('tasks',[{id:1,text:'Planejar os 3 conteúdos da semana',done:false},{id:2,text:'Revisar legendas e chamadas para ação',done:false},{id:3,text:'Separar fotos profissionais',done:false},{id:4,text:'Registrar os Insights do Instagram',done:false}]),metrics=get('metrics',[]),assets=get('assets',[]),goals=get('goals',{posts:12,followers:100,bookings:10,focus:'Fortalecer autoridade em estética facial, educar sobre protocolos personalizados e converter interesse em avaliações.'});
 if(events===null){events=[
 {id:101,date:'2026-11-03',format:'Post estático',title:'Sua pele merece cuidado personalizado',goal:'Autoridade',status:'Em produção',cta:'Agende sua avaliação',notes:'Arte editorial com fotografia profissional; destacar avaliação individualizada.'},
 {id:102,date:'2026-11-06',format:'Post estático',title:'Limpeza de pele: quando fazer?',goal:'Educar',status:'Ideia',cta:'Agende sua avaliação',notes:'Post educativo curto; frequência depende da avaliação da pele.'},
@@ -93,7 +141,7 @@ $('exportMetrics').addEventListener('click',()=>{const rows=[['Mês','Seguidores
 $('goalForm').addEventListener('submit',e=>{e.preventDefault();goals={posts:Number($('gPosts').value)||0,followers:Number($('gFollowers').value)||0,bookings:Number($('gBookings').value)||0,focus:$('gFocus').value};put('goals',goals);renderGoals();alert('Metas salvas.')});
 function renderGoals(){$('gPosts').value=goals.posts;$('gFollowers').value=goals.followers;$('gBookings').value=goals.bookings;$('gFocus').value=goals.focus;const published=events.filter(e=>e.status==='Publicado').length;const pct=Math.min(100,Math.round(published/Math.max(1,goals.posts)*100));$('goalSummary').innerHTML='<p>Publicações concluídas: <b>'+published+' / '+goals.posts+'</b></p><div style="height:9px;background:#f0e8e2;border-radius:20px"><div style="height:9px;width:'+pct+'%;background:#684633;border-radius:20px"></div></div><p class="muted">Meta de seguidores: '+goals.followers+' · Meta de agendamentos: '+goals.bookings+'</p><div class="notice">'+escapeHTML(goals.focus)+'</div>'}
 function updateDash(){$('sContent').textContent=events.length;renderEvents();renderGoals()}
-function init(){const now=new Date();calendarCursor=new Date(2026,10,1);$('evDate').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');$('mPeriod').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');renderPosts();renderTasks();renderEvents();renderAssets();refreshAssetOptions();renderStories();renderMetrics();renderGoals();updateDash()}
+function init(){const now=new Date();calendarCursor=new Date(now.getFullYear(),now.getMonth(),1);$('evDate').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');$('mPeriod').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');renderPosts();renderTasks();renderEvents();renderAssets();refreshAssetOptions();renderStories();renderMetrics();renderGoals();updateDash()}
 try{init()}catch(e){console.error('Falha ao iniciar painel',e);alert('O painel encontrou um erro ao iniciar. Atualize a página; se continuar, abra em uma janela anônima.')}
 })();
 </script></body></html>
