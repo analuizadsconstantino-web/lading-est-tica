@@ -300,6 +300,34 @@ h1{font-size:clamp(40px,5vw,62px)}
  .day-slide .copy-caption{width:100%;padding:13px}
 }
 
+
+/* Reestruturação real do material expandido */
+.day-slide .details-content{display:block!important;width:100%!important;max-width:none!important;margin:22px 0 0!important;padding:18px 0 0!important;border-top:1px solid #e8d9cf!important}
+.day-slide .details-content .material-grid{display:grid;grid-template-columns:1fr;gap:12px;width:100%}
+.day-slide .details-content .material-block{display:block!important;width:100%!important;min-width:0!important;margin:0!important;padding:17px 19px!important;background:#fbf7f3!important;border:1px solid #eadbd1!important;border-radius:12px!important;box-shadow:none!important}
+.day-slide .details-content .material-block h4{display:flex!important;align-items:center!important;gap:9px!important;margin:0 0 12px!important;padding:0!important;color:#75432f!important;font:700 10px/1.4 'DM Sans',sans-serif!important;letter-spacing:1.1px!important;text-transform:uppercase!important}
+.day-slide .details-content .material-block h4:before{content:"";display:inline-block;width:5px;height:15px;border-radius:4px;background:#b8785d}
+.day-slide .details-content .material-block p{margin:0!important;padding:0!important;color:#49362c!important;font:400 13px/1.85 'DM Sans',sans-serif!important;white-space:pre-line!important;overflow-wrap:break-word!important;word-break:normal!important}
+.day-slide .details-content .material-block.script-block{background:#f7eee8!important;border-color:#e7d5c8!important}
+.day-slide .details-content .material-block.caption-block{background:#fff!important;border-color:#e4d4c9!important}
+.day-slide .details-content .material-block.caption-block p{font-size:14px!important;line-height:1.9!important}
+.day-slide .details-content .material-block.hashtag-block p{font-weight:600!important;color:#89553f!important}
+.day-slide .details-content .script-parts{display:grid;gap:10px}
+.day-slide .details-content .script-part{padding:12px 14px;background:#fffaf6;border:1px solid #ecddd3;border-radius:9px}
+.day-slide .details-content .script-part b{display:block;margin-bottom:5px;color:#9a5b42;font-size:9px;letter-spacing:1px}
+.day-slide .details-content .script-part p{font-size:13px!important;line-height:1.8!important}
+.day-slide .details-content .direction-list{margin:0;padding-left:22px;color:#49362c;font-size:13px;line-height:1.85}
+.day-slide .details-content .direction-list li{padding-left:4px;margin:0 0 6px}
+.day-slide .details-content .publish-meta{display:flex!important;align-items:center;gap:9px;flex-wrap:wrap;padding:11px 14px!important;margin:0 0 12px!important;background:#f7eee8!important;border:1px solid #eadbd1!important;border-radius:10px!important}
+.day-slide .details-content .publish-meta strong{font:600 14px 'Playfair Display',serif;color:#432014}
+.day-slide .details-content .publish-meta span{font:400 10px 'DM Sans',sans-serif;color:#806b60}
+.day-slide .details-content .copy-caption{display:block;width:100%;margin:14px 0 0!important;padding:14px 18px!important;border:0!important;border-radius:9px!important;background:#432014!important;color:#fff!important;font:700 11px 'DM Sans',sans-serif!important;text-align:center;cursor:pointer}
+.day-slide .details-content .copy-caption:hover{background:#75432f!important}
+.day-slide details[open] .open-hint b{transform:rotate(45deg)}
+.day-slide .open-hint b{display:inline-block;transition:transform .2s}
+@media(min-width:720px){.day-slide .details-content .material-grid{grid-template-columns:1fr 1fr}.day-slide .details-content .material-block.caption-block{grid-column:1/-1}.day-slide .details-content .material-block.script-block{grid-column:1/-1}}
+@media(max-width:600px){.day-slide .details-content .material-block{padding:14px 13px!important}.day-slide .details-content .material-block p,.day-slide .details-content .script-part p{font-size:12px!important;line-height:1.8!important}.day-slide .details-content .material-block.caption-block p{font-size:13px!important}.day-slide .details-content .direction-list{font-size:12px}}
+
 </style></head><body>
 <header class="hero"><div class="shell"><nav class="nav"><div class="brand">Planejamento estratégico<strong>Ana Constantino Estética Integrativa</strong></div><span class="month">01 — 31 DEZEMBRO 2026</span></nav><div class="hero-grid"><div><div class="eyebrow">Instagram · calendário editorial</div><h1>Um dezembro de <em>conteúdo com intenção.</em></h1><p>Planejamento para ampliar alcance, fortalecer autoridade e transformar interesse em novos agendamentos. Limpeza de pele e peeling são os pilares comerciais, com conteúdos complementares sobre os demais procedimentos.</p></div><div class="stats"><div class="stat"><strong>15</strong><span>Reels para alcance e descoberta</span></div><div class="stat"><strong>20</strong><span>Posts estáticos para confiança e conversão</span></div><div class="stat"><strong>35</strong><span>Conteúdos no ciclo de cinco semanas</span></div></div></div></div></header>
 <main class="shell"><section class="planner">
@@ -609,37 +637,92 @@ Será um prazer fazer parte do seu plano de autocuidado.\n\n#AgendaAberta #Limpe
   <p class="planner-note">A programação começa em 30/11 para completar a primeira semana e termina em 03/01 para incluir a virada do ano.</p>
 </section></main><footer><div class="shell foot"><span>ANA CONSTANTINO · ESTÉTICA INTEGRATIVA</span><span>Calendário editorial · Dezembro 2026</span></div></footer>
 
+
 <script>
 document.addEventListener('DOMContentLoaded',function(){
  const slides=Array.from(document.querySelectorAll('.day-slide'));
- if(!slides.length)return;
- let current=0;
  const $=id=>document.getElementById(id);
- function update(){
-  slides.forEach((s,i)=>s.hidden=i!==current);
-  const slide=slides[current];
-  const date=new Date(slide.dataset.date+'T12:00:00');
-  const full=date.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
-  const type=slide.querySelector('.format-label').textContent;
-  $('dayPosition').textContent='DIA '+String(current+1).padStart(2,'0');
-  $('dayDate').textContent=full;
-  $('dayFormat').textContent=type;
-  $('dayProgress').textContent=(current+1)+' / '+slides.length;
-  $('dayProgressBar').style.width=((current+1)/slides.length*100)+'%';
-  $('bottomCounter').textContent=(current+1)+' de '+slides.length;
-  ['prevDay','prevDayBottom'].forEach(id=>$(id).disabled=current===0);
-  ['nextDay','nextDayBottom'].forEach(id=>$(id).disabled=current===slides.length-1);
-  window.scrollTo({top:0,behavior:'smooth'});
- }
- function move(delta){current=Math.max(0,Math.min(slides.length-1,current+delta));update();}
- ['prevDay','prevDayBottom'].forEach(id=>$(id).addEventListener('click',()=>move(-1)));
- ['nextDay','nextDayBottom'].forEach(id=>$(id).addEventListener('click',()=>move(1)));
- document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1);});
- document.querySelectorAll('.copy-caption').forEach(btn=>btn.addEventListener('click',()=>{const text=btn.getAttribute('data-copy')||'';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>{btn.textContent='Legenda copiada!';setTimeout(()=>btn.textContent='Copiar legenda + hashtags',1600);});}}));
+ // Reconstrói cada bloco de conteúdo para que roteiro, legenda e orientações
+ // tenham hierarquia visual própria, sem depender da formatação original.
+ document.querySelectorAll('.day-slide .details-content').forEach(function(root){
+   const sections=Array.from(root.querySelectorAll(':scope > section'));
+   const copy=root.querySelector(':scope > .copy-caption');
+   const grid=document.createElement('div');grid.className='material-grid';
+   sections.forEach(function(section){
+     const heading=section.querySelector('h4'), para=section.querySelector('p');
+     if(!heading||!para)return;
+     const label=heading.textContent.trim();
+     const raw=para.textContent.trim();
+     const block=document.createElement('section');block.className='material-block';
+     const h=document.createElement('h4');h.textContent=label;block.appendChild(h);
+     if(/roteiro completo/i.test(label)){
+       block.classList.add('script-block');
+       const parts=document.createElement('div');parts.className='script-parts';
+       const re=/(GANCHO|FALA|FECHAMENTO):/g;let match,last=0,active='';
+       while((match=re.exec(raw))!==null){
+         if(active){const content=raw.slice(last,match.index).trim();if(content){const item=document.createElement('div');item.className='script-part';const b=document.createElement('b');b.textContent=active;const p=document.createElement('p');p.textContent=content;item.append(b,p);parts.appendChild(item);}}
+         active=match[1];last=re.lastIndex;
+       }
+       const rest=raw.slice(last).trim();if(active&&rest){const item=document.createElement('div');item.className='script-part';const b=document.createElement('b');b.textContent=active;const p=document.createElement('p');p.textContent=rest;item.append(b,p);parts.appendChild(item);}
+       if(!parts.children.length){const p=document.createElement('p');p.textContent=raw;block.appendChild(p);}else block.appendChild(parts);
+     }else if(/direção de gravação|direção de arte/i.test(label)&&/^\s*1\./m.test(raw)){
+       const ol=document.createElement('ol');ol.className='direction-list';
+       raw.split(/\n/).map(x=>x.trim()).filter(Boolean).forEach(line=>{const li=document.createElement('li');li.textContent=line.replace(/^\d+\.\s*/,'');ol.appendChild(li);});
+       block.appendChild(ol);
+     }else{
+       const p=document.createElement('p');p.textContent=raw;block.appendChild(p);
+       if(/legenda estratégica/i.test(label))block.classList.add('caption-block');
+       if(/hashtags/i.test(label))block.classList.add('hashtag-block');
+     }
+     grid.appendChild(block);
+   });
+   root.innerHTML='';
+   const meta=document.createElement('div');meta.className='publish-meta';
+   const strong=document.createElement('strong');strong.textContent='Material da publicação';
+   const span=document.createElement('span');span.textContent='Roteiro, legenda e orientações';
+   meta.append(strong,span);root.append(meta,grid);
+   if(copy)root.append(copy);
+ });
+ // Data completa no material expandido.
+ document.querySelectorAll('.day-slide .post').forEach(function(card){
+   const check=card.querySelector('input[type="checkbox"][data-date]');
+   const root=card.querySelector('.details-content');if(!check||!root)return;
+   const d=new Date(check.dataset.date+'T12:00:00');
+   const label=d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+   const meta=document.createElement('div');meta.className='publish-meta';
+   const b=document.createElement('strong');b.textContent='Data de publicação';
+   const s=document.createElement('span');s.textContent=label;meta.append(b,s);root.insertBefore(meta,root.firstChild);
+ });
+ // Copiar legenda + hashtags + CTA.
+ document.querySelectorAll('.copy-caption').forEach(btn=>btn.addEventListener('click',async function(){
+   const content=btn.getAttribute('data-copy')||'';
+   try{await navigator.clipboard.writeText(content);btn.textContent='Legenda copiada';setTimeout(()=>btn.textContent='Copiar legenda + hashtags',1800);}
+   catch(e){btn.textContent='Não foi possível copiar';setTimeout(()=>btn.textContent='Copiar legenda + hashtags',1800);}
+ }));
+ // Progresso de publicações salvo neste navegador.
  const checks=Array.from(document.querySelectorAll('.check input[type=checkbox]'));
  const key='ana-calendar-dec-2026-progress';
  try{const saved=JSON.parse(localStorage.getItem(key)||'{}');checks.forEach(c=>c.checked=!!saved[c.dataset.date]);}catch(e){}
- function progress(){const done=checks.filter(c=>c.checked).length;const label=document.getElementById('publishedTotal');if(label)label.textContent=done+' de '+checks.length;try{const saved={};checks.forEach(c=>saved[c.dataset.date]=c.checked);localStorage.setItem(key,JSON.stringify(saved));}catch(e){}}
- checks.forEach(c=>c.addEventListener('change',progress));progress();update();
+ function save(){const data={};checks.forEach(c=>data[c.dataset.date]=c.checked);try{localStorage.setItem(key,JSON.stringify(data));}catch(e){}}
+ checks.forEach(c=>c.addEventListener('change',save));
+ // Navegação diária por setas.
+ if(!slides.length)return;let current=0;
+ function update(){
+   slides.forEach((s,i)=>s.hidden=i!==current);
+   const slide=slides[current],d=new Date(slide.dataset.date+'T12:00:00');
+   $('dayPosition').textContent='DIA '+String(current+1).padStart(2,'0');
+   $('dayDate').textContent=d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+   $('dayFormat').textContent=slide.querySelector('.format-label').textContent;
+   $('dayProgress').textContent=(current+1)+' / '+slides.length;
+   $('dayProgressBar').style.width=((current+1)/slides.length*100)+'%';
+   $('bottomCounter').textContent=(current+1)+' de '+slides.length;
+   ['prevDay','prevDayBottom'].forEach(id=>$(id).disabled=current===0);
+   ['nextDay','nextDayBottom'].forEach(id=>$(id).disabled=current===slides.length-1);
+ }
+ function move(delta){current=Math.max(0,Math.min(slides.length-1,current+delta));update();window.scrollTo({top:0,behavior:'smooth'});}
+ ['prevDay','prevDayBottom'].forEach(id=>$(id).addEventListener('click',()=>move(-1)));
+ ['nextDay','nextDayBottom'].forEach(id=>$(id).addEventListener('click',()=>move(1)));
+ document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1);});
+ update();
 });
 </script></body></html>
