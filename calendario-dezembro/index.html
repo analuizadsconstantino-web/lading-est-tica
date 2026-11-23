@@ -382,8 +382,31 @@ h1{font-size:clamp(40px,5vw,62px)}
  .day-slide article .details-content .material-block{padding:15px 14px!important}
 }
 
+
+/* Cabecalho simplificado */
+.hero{padding:16px 0 22px!important;background:#4A2415!important;color:#fff7f1!important}
+.hero .nav{padding:0 0 14px!important;margin:0 0 15px!important;border-bottom:1px solid #ffffff26!important}
+.hero .brand{font-size:0!important;letter-spacing:0!important}
+.hero .brand strong{display:block!important;margin:0!important;font:600 18px 'Playfair Display',serif!important;letter-spacing:0!important;color:#fff7f1!important}
+.hero .month{padding:6px 10px!important;border:1px solid #ffffff45!important;border-radius:20px!important;color:#f3d3b4!important;font-size:9px!important;letter-spacing:.8px!important}
+.hero-simple{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.hero-simple h1{margin:0!important;font:500 clamp(27px,3.5vw,38px)/1.1 'Playfair Display',serif!important;color:#fff7f1!important;max-width:none!important}
+.hero-simple h1 em{color:#f3d3b4!important}
+.hero-simple p{max-width:390px!important;margin:0!important;color:#ead8ca!important;font:400 10px/1.55 'DM Sans',sans-serif!important}
+@media(max-width:700px){
+ .hero{padding:14px 0 17px!important}
+ .hero .nav{padding-bottom:11px!important;margin-bottom:12px!important}
+ .hero .brand strong{font-size:16px!important}
+ .hero-simple{display:block}
+ .hero-simple h1{font-size:29px!important}
+ .hero-simple p{margin-top:6px!important;font-size:10px!important}
+}
+
 </style></head><body>
-<header class="hero"><div class="shell"><nav class="nav"><div class="brand">Planejamento estratégico<strong>Ana Constantino Estética Integrativa</strong></div><span class="month">01 — 31 DEZEMBRO 2026</span></nav><div class="hero-grid"><div><div class="eyebrow">Instagram · calendário editorial</div><h1>Um dezembro de <em>conteúdo com intenção.</em></h1><p>Planejamento para ampliar alcance, fortalecer autoridade e transformar interesse em novos agendamentos. Limpeza de pele e peeling são os pilares comerciais, com conteúdos complementares sobre os demais procedimentos.</p></div><div class="stats"><div class="stat"><strong>15</strong><span>Reels para alcance e descoberta</span></div><div class="stat"><strong>20</strong><span>Posts estáticos para confiança e conversão</span></div><div class="stat"><strong>35</strong><span>Conteúdos no ciclo de cinco semanas</span></div></div></div></div></header>
+<header class="hero"><div class="shell">
+  <nav class="nav"><div class="brand"><strong>Ana Constantino Estética Integrativa</strong></div><span class="month">DEZEMBRO 2026</span></nav>
+  <div class="hero-simple"><h1>Calendário de <em>conteúdo</em></h1><p>Planejamento de Reels e posts para atrair clientes e fortalecer sua presença no Instagram.</p></div>
+</div></header>
 <main class="shell"><section class="planner">
   <div class="section-intro"><span class="eyebrow">Planejamento de execução</span><h2>Seu calendário, um dia por vez.</h2><p>Use as setas para avançar ou voltar. Em cada data, veja se a publicação é um Reel ou um post estático e abra o cartão para acessar todo o material.</p></div>
   <div class="month-progress"><div><span>Dezembro 2026 · programação diária</span><b id="dayProgress">1 / 35</b></div><div class="track"><i id="dayProgressBar"></i></div></div>
