@@ -449,6 +449,55 @@ main.shell{width:min(960px,100%)!important;padding:30px 26px 55px!important}
  .day-slide .post-summary{font-size:11px!important}
 }
 
+
+/* Navegacao inferior: botoes completos e alinhados */
+.day-navigation.bottom-nav{
+ display:grid!important;
+ grid-template-columns:minmax(112px,1fr) auto minmax(112px,1fr)!important;
+ align-items:center!important;
+ gap:12px!important;
+ width:100%!important;
+ margin:14px 0 0!important;
+ padding:12px 0 0!important;
+ border-top:1px solid #eadbd1!important;
+ background:transparent!important;
+ border-radius:0!important;
+}
+.day-navigation.bottom-nav>button{
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:7px!important;
+ width:auto!important;
+ min-width:112px!important;
+ max-width:100%!important;
+ height:42px!important;
+ padding:0 16px!important;
+ border:1px solid #e4d3c7!important;
+ border-radius:9px!important;
+ background:#fff!important;
+ color:#4A2415!important;
+ font:600 11px 'DM Sans',sans-serif!important;
+ white-space:nowrap!important;
+}
+.day-navigation.bottom-nav>button:first-child{justify-self:start!important}
+.day-navigation.bottom-nav>button:last-child{justify-self:end!important}
+.day-navigation.bottom-nav>button:hover:not(:disabled){background:#4A2415!important;color:#fff!important;border-color:#4A2415!important}
+.day-navigation.bottom-nav>button:disabled{opacity:.35!important}
+.day-navigation.bottom-nav>span{
+ display:block!important;
+ min-width:52px!important;
+ text-align:center!important;
+ font:600 10px 'DM Sans',sans-serif!important;
+ color:#806b60!important;
+ white-space:nowrap!important;
+}
+@media(max-width:520px){
+ .day-navigation.bottom-nav{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;gap:6px!important;padding-top:10px!important}
+ .day-navigation.bottom-nav>button{min-width:0!important;width:100%!important;height:40px!important;padding:0 7px!important;font-size:10px!important}
+ .day-navigation.bottom-nav>span{font-size:9px!important;min-width:42px!important}
+}
+
 </style></head><body>
 <header class="hero"><div class="shell">
   <nav class="nav"><div class="brand"><strong>Ana Constantino Estética Integrativa</strong></div><span class="month">DEZEMBRO 2026</span></nav>
