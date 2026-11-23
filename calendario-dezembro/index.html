@@ -798,8 +798,12 @@ document.addEventListener('DOMContentLoaded',function(){
    sections.forEach(function(section){
      const heading=section.querySelector('h4'), para=section.querySelector('p');
      if(!heading||!para)return;
-     const label=heading.textContent.trim();
+     let label=heading.textContent.trim();
      const raw=para.textContent.trim();
+     if(/texto para a arte \/ slides/i.test(label)){
+       const isCarousel=/SLIDE\\s*1\\s*[—-]/i.test(raw);
+       label=isCarousel?'Texto do carrossel':'Texto da arte única';
+     }
      const block=document.createElement('section');block.className='material-block';
      const h=document.createElement('h4');h.textContent=label;block.appendChild(h);
      if(/roteiro completo/i.test(label)){
@@ -848,7 +852,7 @@ document.addEventListener('DOMContentLoaded',function(){
    const hashtags=root?.querySelector('.hashtag-block p')?.innerText?.trim()||'';
    const ctaSection=Array.from(root?.querySelectorAll('.material-block')||[]).find(block=>/chamada para ação/i.test(block.querySelector('h4')?.textContent||''));
    const cta=ctaSection?.querySelector('p')?.innerText?.trim()||'';
-   const content=[caption,hashtags,cta].filter(Boolean).join('\\n\\n');
+   const content=[caption,hashtags,cta].filter(Boolean).join('\n\n');
    if(!content){btn.textContent='Legenda não encontrada';setTimeout(()=>btn.textContent='Copiar legenda + hashtags',1800);return;}
    let copied=false;
    try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(content);copied=true;}}catch(e){}
