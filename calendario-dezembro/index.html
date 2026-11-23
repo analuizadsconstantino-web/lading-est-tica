@@ -62,6 +62,104 @@ footer{padding:25px 0}
 @media(max-width:760px){.shell{padding:0 17px}.hero-grid{grid-template-columns:1fr;gap:22px}.layout{grid-template-columns:1fr}.sidebar{position:static;grid-template-columns:1fr 1fr}.side-links{grid-template-columns:1fr 1fr}.month-overview{grid-template-columns:repeat(2,minmax(0,1fr))}.week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head h2{font-size:29px}}
 @media(max-width:520px){.shell{padding:0 12px}.nav{align-items:flex-start;padding-bottom:27px}.brand strong{font-size:18px}.month{font-size:8px;padding:8px 10px}.hero{padding:20px 0 30px}h1{font-size:42px}.stats{gap:6px}.stat{padding:11px 8px}.stat strong{font-size:27px}.stat span{font-size:9px}.sidebar{grid-template-columns:1fr}.side-links{grid-template-columns:1fr 1fr}.month-overview{gap:6px}.month-overview a{padding:10px}.month-overview b{font-size:13px}.week{padding:13px 10px}.week-head h3{font-size:21px}.week-grid{grid-template-columns:1fr;gap:9px}.post{padding:12px;min-height:0}.post summary{grid-template-columns:57px minmax(0,1fr);column-gap:10px}.post-top{min-height:88px}.date{font-size:17px}.post-title{font-size:14px}.post-summary{font-size:10px}.toolbar{padding:9px}.filters{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:4px}.filter{flex-shrink:0}.tools{width:100%}.search{min-width:100px;flex:1}.strategy-grid{grid-template-columns:1fr}}
 
+
+/* DIRECAO VISUAL 2 — AGENDA LIMPA E LINEAR */
+body{background:#faf7f4;color:#2b160f}
+.shell{width:min(1180px,100%);padding:0 30px}
+.hero{padding:24px 0 34px;background:linear-gradient(115deg,#2d160f,#4A2415 72%,#70432f)}
+.nav{padding-bottom:25px}
+.brand strong{font-size:21px}
+.hero-grid{grid-template-columns:minmax(0,1fr) 360px;gap:34px}
+h1{font-size:clamp(40px,4.5vw,58px);max-width:650px}
+.hero p{font-size:13px;line-height:1.7}
+.stats{gap:8px}
+.stat{padding:12px 10px;border-radius:10px}
+.stat strong{font-size:29px}
+.stat span{font-size:9px}
+main{padding:28px 0 55px}
+.layout{display:flex;flex-direction:column;gap:18px}
+.sidebar{position:static;display:grid;grid-template-columns:1.1fr .9fr;gap:12px;order:0}
+.side-card{padding:14px 17px;border-radius:11px;box-shadow:none}
+.side-card h2{font-size:17px;margin-bottom:8px}
+.side-links{display:flex;flex-wrap:wrap;gap:5px}
+.side-links a{padding:7px 10px;font-size:10px}
+.side-card p{font-size:10px;margin-top:7px}
+.progress-row{margin:8px 0 6px}
+.content{order:1}
+.section-head{margin-bottom:13px}
+.section-head h2{font-size:30px}
+.section-head p{font-size:11px}
+.month-overview{grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-bottom:14px}
+.month-overview a{padding:10px 12px;border-radius:9px;box-shadow:none}
+.month-overview b{font-size:13px}
+.month-overview span{font-size:9px}
+.toolbar{padding:9px 11px;margin-bottom:10px;border-radius:10px;box-shadow:none}
+.filters{gap:4px}
+.filter,.tool{font-size:10px;padding:7px 10px}
+.search{min-width:170px}
+.search input{font-size:10px}
+.legend{margin-bottom:12px;font-size:10px}
+.week{padding:16px 18px;margin-bottom:15px;border-radius:12px;box-shadow:none}
+.week-head{margin-bottom:8px;padding-bottom:10px}
+.week-head h3{font-size:22px}
+.week-head p{font-size:10px}
+.week-count{font-size:9px;padding:7px 10px}
+.week-grid{display:flex;flex-direction:column;gap:0}
+.post{display:grid;grid-template-columns:94px minmax(0,1fr);column-gap:15px;align-items:start;padding:13px 4px;border:0;border-top:1px solid #eee3dc;border-radius:0;background:transparent;min-height:0;box-shadow:none!important}
+.post:first-child{border-top:0}
+.post.reel,.post.outside{border-top-color:#eee3dc;background:transparent;opacity:1}
+.post details{display:contents}
+.post summary{grid-column:1 / -1;display:grid;grid-template-columns:94px minmax(0,1fr);column-gap:15px;row-gap:4px;align-items:start}
+.post-top{grid-column:1;grid-row:1 / span 4;min-height:66px;padding:9px 5px;background:#f5ebe4;border-radius:8px;justify-content:center;gap:6px}
+.date{font-size:18px}
+.format{font-size:8px;padding:4px 6px}
+.post-title{grid-column:2;grid-row:1;font-size:15px;line-height:1.3;margin:2px 0 0}
+.post-summary{grid-column:2;grid-row:2;font-size:10px;line-height:1.5}
+.post-category{grid-column:2;grid-row:3;font-size:9px;margin-top:2px}
+.open-hint{grid-column:2;grid-row:4;margin-top:3px;padding-top:6px;font-size:9px;border-top:0}
+.open-hint b{font-size:13px}
+.details-content{grid-column:2;margin:12px 0 2px;padding:12px 0 0;border-top:1px solid #e9d9ce}
+.details-content section{margin:10px 0;padding-bottom:9px}
+.details-content h4{font-size:9px;margin-bottom:5px}
+.details-content p{font-size:11px;line-height:1.65}
+.publish-meta{padding:8px 10px;margin-bottom:10px}
+.publish-meta strong{font-size:13px}
+.check{grid-column:2;margin-top:6px;padding-top:8px;font-size:9px}
+.copy-caption{font-size:9px;padding:9px 12px}
+.strategy{margin-top:27px}
+.strategy h2{font-size:27px}
+.strategy-grid{gap:8px}
+.strategy-card{padding:14px;box-shadow:none}
+.strategy-card h3{font-size:15px}
+.strategy-card p{font-size:10px}
+footer{padding:18px 0}
+@media(max-width:850px){
+ .shell{padding:0 20px}.hero-grid{grid-template-columns:1fr;gap:18px}
+ .stats{max-width:500px}.month-overview{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .shell{padding:0 13px}.hero{padding:19px 0 26px}.nav{padding-bottom:20px}
+ .brand strong{font-size:18px}.month{font-size:8px}
+ h1{font-size:39px}.hero p{font-size:12px}
+ .stat{padding:10px 7px}.stat strong{font-size:25px}.stat span{font-size:8px}
+ .sidebar{grid-template-columns:1fr}.side-links{display:grid;grid-template-columns:repeat(3,1fr)}
+ .month-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .month-overview a{padding:9px}.month-overview b{font-size:12px}
+ .section-head h2{font-size:25px}
+ .toolbar{padding:8px}.filters{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:4px}
+ .filter{flex-shrink:0}.tools{width:100%}.search{flex:1;min-width:100px}
+ .week{padding:12px 10px;margin-bottom:12px}
+ .week-head h3{font-size:19px}.week-head p{font-size:9px}
+ .post{grid-template-columns:66px minmax(0,1fr);column-gap:10px;padding:11px 0}
+ .post summary{grid-template-columns:66px minmax(0,1fr);column-gap:10px}
+ .post-top{min-height:62px;padding:7px 3px}.date{font-size:16px}
+ .post-title{font-size:13px}.post-summary{font-size:9px}
+ .post-category{font-size:9px}.open-hint{font-size:9px}
+ .details-content{grid-column:1/-1;margin-left:0}
+ .check{grid-column:2}
+ .strategy-grid{grid-template-columns:1fr}
+}
+
 </style></head><body>
 <header class="hero"><div class="shell"><nav class="nav"><div class="brand">Planejamento estratégico<strong>Ana Constantino Estética Integrativa</strong></div><span class="month">01 — 31 DEZEMBRO 2026</span></nav><div class="hero-grid"><div><div class="eyebrow">Instagram · calendário editorial</div><h1>Um dezembro de <em>conteúdo com intenção.</em></h1><p>Planejamento para ampliar alcance, fortalecer autoridade e transformar interesse em novos agendamentos. Limpeza de pele e peeling são os pilares comerciais, com conteúdos complementares sobre os demais procedimentos.</p></div><div class="stats"><div class="stat"><strong>15</strong><span>Reels para alcance e descoberta</span></div><div class="stat"><strong>20</strong><span>Posts estáticos para confiança e conversão</span></div><div class="stat"><strong>35</strong><span>Conteúdos no ciclo de cinco semanas</span></div></div></div></div></header>
 <main class="shell"><div class="layout"><aside class="sidebar"><section class="side-card"><h2>Navegação rápida</h2><div class="side-links"><a href="#semana-1">Semana 01</a><a href="#semana-2">Semana 02</a><a href="#semana-3">Semana 03</a><a href="#semana-4">Semana 04</a><a href="#semana-5">Semana 05</a></div><p><b>Foco comercial:</b> limpeza de pele e peeling. Os demais procedimentos complementam a comunicação de cuidado personalizado.</p></section><section class="side-card"><h2>Progresso de execução</h2><div class="progress-row"><span>Publicações concluídas</span><b id="done">0 de 35</b></div><div class="progress"><i id="bar"></i></div><p>Marque cada conteúdo como publicado. O progresso fica salvo neste navegador.</p></section></aside><section class="content" id="calendario"><div class="section-head"><div class="eyebrow">Planejamento de execução</div><h2>Calendário de publicações</h2><p>Abra um conteúdo para ver roteiro, texto da arte, legenda, hashtags, CTA e Stories.</p></div><div class="month-overview" aria-label="Resumo das semanas"><a href="#semana-1"><b>30 nov — 06 dez</b><span>Semana 01 · início do calendário</span></a><a href="#semana-2"><b>07 — 13 dez</b><span>Semana 02 · alcance e autoridade</span></a><a href="#semana-3"><b>14 — 20 dez</b><span>Semana 03 · relacionamento</span></a><a href="#semana-4"><b>21 — 27 dez</b><span>Semana 04 · Natal e conversão</span></a><a href="#semana-5"><b>28 dez — 03 jan</b><span>Semana 05 · virada do ano</span></a></div><div class="toolbar"><div class="filters"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="reel">Reels</button><button class="filter" data-filter="static">Estáticos</button><button class="filter" data-filter="Limpeza de pele">Limpeza de pele</button><button class="filter" data-filter="Peeling">Peeling</button><button class="filter" data-filter="Conversão">Conversão</button></div><div class="tools"><label class="search"><input id="search" type="search" placeholder="Buscar conteúdo..." aria-label="Buscar conteúdo"></label><button class="tool" id="export">Exportar CSV</button></div></div><div class="legend"><span><i class="r"></i>Reels · descoberta</span><span><i class="s"></i>Estáticos · autoridade e conversão</span><span>Abra cada cartão para acessar o material completo</span></div><div id="calendar"><section class="week" id="semana-1"><header class="week-head"><div><span class="eyebrow">Semana 01</span><h3>30 nov — 06 dez</h3><p>Segunda a domingo · 3 Reels e 4 posts estáticos</p></div><span class="week-count">7 conteúdos</span></header><div class="week-grid"><article class="post static outside" data-type="static" data-tag="Relacionamento"><details><summary><span class="post-top"><span class="date">30/11 · Segunda</span><span class="format">▣ Estático</span></span><span class="post-title">Dezembro também é mês de cuidar de você</span><span class="post-summary">Post de abertura do mês com mensagem de autocuidado e convite sutil para conhecer os tratamentos faciais.</span><span class="post-category">Relacionamento</span><span class="open-hint">Abrir roteiro e legenda <b>＋</b></span></summary><div class="details-content"><section><h4>Texto para a arte / slides</h4><p>Arte única:
