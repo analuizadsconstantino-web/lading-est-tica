@@ -328,6 +328,60 @@ h1{font-size:clamp(40px,5vw,62px)}
 @media(min-width:720px){.day-slide .details-content .material-grid{grid-template-columns:1fr 1fr}.day-slide .details-content .material-block.caption-block{grid-column:1/-1}.day-slide .details-content .material-block.script-block{grid-column:1/-1}}
 @media(max-width:600px){.day-slide .details-content .material-block{padding:14px 13px!important}.day-slide .details-content .material-block p,.day-slide .details-content .script-part p{font-size:12px!important;line-height:1.8!important}.day-slide .details-content .material-block.caption-block p{font-size:13px!important}.day-slide .details-content .direction-list{font-size:12px}}
 
+
+/* Correcao estrutural: impedir que o material expandido herde colunas estreitas */
+.day-slide,.day-slide article,.day-slide article details,.day-slide article details[open],
+.day-slide article details summary,.day-slide article .details-content,
+.day-slide article .details-content .material-grid{
+ box-sizing:border-box!important;width:100%!important;max-width:100%!important;min-width:0!important;
+}
+.day-slide article{display:block!important;overflow:visible!important}
+.day-slide article details{display:block!important;overflow:visible!important}
+.day-slide article details summary{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ width:100%!important;min-width:0!important;gap:9px!important;
+}
+.day-slide article details summary>*{width:100%;min-width:0;box-sizing:border-box}
+.day-slide article .details-content{
+ display:block!important;position:relative!important;float:none!important;
+ clear:both!important;grid-column:1/-1!important;grid-row:auto!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ margin:20px 0 0!important;padding:18px 0 0!important;
+}
+.day-slide article .details-content .material-grid{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ gap:12px!important;width:100%!important;max-width:100%!important;
+}
+.day-slide article .details-content .material-block{
+ display:block!important;flex:0 0 auto!important;float:none!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ grid-column:auto!important;grid-row:auto!important;
+ margin:0!important;padding:18px 20px!important;
+ box-sizing:border-box!important;overflow:visible!important;
+}
+.day-slide article .details-content .material-block h4,
+.day-slide article .details-content .material-block p,
+.day-slide article .details-content .material-block .script-parts,
+.day-slide article .details-content .material-block .script-part{
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ box-sizing:border-box!important;
+}
+.day-slide article .details-content .material-block p{
+ white-space:pre-line!important;overflow-wrap:anywhere!important;word-break:normal!important;
+}
+.day-slide article .details-content .script-part p{width:100%!important}
+.day-slide article .details-content .direction-list{width:100%!important;box-sizing:border-box!important}
+.day-slide article .details-content .copy-caption{width:100%!important;max-width:100%!important}
+@media(min-width:720px){
+ .day-slide article .details-content .material-grid{display:flex!important;flex-direction:column!important}
+ .day-slide article .details-content .material-block.caption-block,
+ .day-slide article .details-content .material-block.script-block{grid-column:auto!important}
+}
+@media(max-width:700px){
+ .day-slide article details summary{display:flex!important}
+ .day-slide article .details-content .material-block{padding:15px 14px!important}
+}
+
 </style></head><body>
 <header class="hero"><div class="shell"><nav class="nav"><div class="brand">Planejamento estratégico<strong>Ana Constantino Estética Integrativa</strong></div><span class="month">01 — 31 DEZEMBRO 2026</span></nav><div class="hero-grid"><div><div class="eyebrow">Instagram · calendário editorial</div><h1>Um dezembro de <em>conteúdo com intenção.</em></h1><p>Planejamento para ampliar alcance, fortalecer autoridade e transformar interesse em novos agendamentos. Limpeza de pele e peeling são os pilares comerciais, com conteúdos complementares sobre os demais procedimentos.</p></div><div class="stats"><div class="stat"><strong>15</strong><span>Reels para alcance e descoberta</span></div><div class="stat"><strong>20</strong><span>Posts estáticos para confiança e conversão</span></div><div class="stat"><strong>35</strong><span>Conteúdos no ciclo de cinco semanas</span></div></div></div></div></header>
 <main class="shell"><section class="planner">
