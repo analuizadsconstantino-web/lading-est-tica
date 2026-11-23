@@ -239,6 +239,67 @@ h1{font-size:clamp(40px,5vw,62px)}
 .planner-note{text-align:center;color:var(--muted);font-size:9px;line-height:1.5;margin:14px 0 0}
 @media(max-width:700px){.shell{padding:0 16px}.hero-grid{grid-template-columns:1fr;gap:18px}.hero{padding:20px 0 28px}.nav{padding-bottom:20px}.brand strong{font-size:19px}.stats{max-width:100%}.stat strong{font-size:25px}.section-intro h2{font-size:27px}.day-slide{padding:16px 14px}.day-heading{align-items:flex-start;flex-direction:column;gap:10px}.day-heading h3{font-size:21px}.format-label{align-self:flex-start}.day-current strong{font-size:17px}.day-navigation{grid-template-columns:42px 1fr 42px;gap:7px}.day-navigation>button{width:40px;height:40px}.day-slide .post-title{font-size:19px}.day-slide .post-summary{font-size:11px}.day-slide .details-content p{font-size:11px}}
 
+
+/* Leitura dos roteiros, legendas e orientacoes */
+.day-slide details[open] .details-content{
+ display:block;width:100%;max-width:100%;margin:20px 0 0;padding:18px 0 0;
+ border-top:1px solid #eadbd1;overflow:visible;
+}
+.day-slide .details-content section{
+ display:block;width:100%;min-width:0;margin:0 0 12px!important;padding:15px 17px!important;
+ background:#fcf8f5;border:1px solid #efe4dc!important;border-radius:11px;
+}
+.day-slide .details-content section h4{
+ display:flex;align-items:center;gap:8px;margin:0 0 9px!important;
+ color:#75432f;font-size:10px!important;font-weight:700;letter-spacing:1.15px;
+ line-height:1.4;text-transform:uppercase;
+}
+.day-slide .details-content section p{
+ display:block;margin:0!important;padding:0!important;color:#49362c;
+ font-family:'DM Sans',sans-serif;font-size:13px!important;line-height:1.85!important;
+ white-space:pre-line;overflow-wrap:anywhere;word-break:normal;
+}
+.day-slide .details-content section:first-of-type{
+ background:#f7eee8;border-color:#ead8ca!important;
+}
+.day-slide .details-content section:first-of-type p{
+ color:#39251c;font-size:13.5px!important;line-height:1.95!important;
+}
+.day-slide .details-content section:nth-last-of-type(3){
+ background:#fff;border-color:#eadbd1!important;
+}
+.day-slide .details-content section:nth-last-of-type(3) p{
+ font-size:13px!important;line-height:1.9!important;
+}
+.day-slide .details-content .publish-meta{
+ display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+ padding:11px 14px;margin:0 0 13px!important;background:#f7eee8;
+ border:1px solid #efdfd4;border-radius:10px;
+}
+.day-slide .details-content .publish-meta strong{font:600 14px 'Playfair Display',serif;color:var(--coffee)}
+.day-slide .details-content .publish-meta span{font-size:10px;line-height:1.5;color:var(--muted)}
+.day-slide .copy-caption{
+ display:inline-flex;align-items:center;justify-content:center;gap:7px;
+ margin:5px 0 2px;padding:12px 18px;border-radius:8px;
+ background:var(--coffee);color:#fff;font:600 11px 'DM Sans',sans-serif;
+ cursor:pointer;border:1px solid var(--coffee);transition:background .2s;
+}
+.day-slide .copy-caption:hover{background:#75432f}
+.day-slide .check{
+ display:flex;align-items:center;gap:9px;margin:17px 0 0!important;padding:13px 0 0!important;
+ border-top:1px solid #eee3dc;font-size:11px;color:#806b60;
+}
+.day-slide .check input{width:15px;height:15px;accent-color:#75432f}
+.day-slide .open-hint{color:#92523b;font-weight:700}
+.day-slide details[open] .open-hint b{transform:rotate(45deg)}
+.day-slide .open-hint b{display:inline-block;transition:transform .2s}
+@media(max-width:600px){
+ .day-slide details[open] .details-content{margin-top:15px;padding-top:14px}
+ .day-slide .details-content section{padding:13px 12px!important;margin-bottom:9px!important}
+ .day-slide .details-content section p,.day-slide .details-content section:first-of-type p{font-size:12px!important;line-height:1.8!important}
+ .day-slide .copy-caption{width:100%;padding:13px}
+}
+
 </style></head><body>
 <header class="hero"><div class="shell"><nav class="nav"><div class="brand">Planejamento estratégico<strong>Ana Constantino Estética Integrativa</strong></div><span class="month">01 — 31 DEZEMBRO 2026</span></nav><div class="hero-grid"><div><div class="eyebrow">Instagram · calendário editorial</div><h1>Um dezembro de <em>conteúdo com intenção.</em></h1><p>Planejamento para ampliar alcance, fortalecer autoridade e transformar interesse em novos agendamentos. Limpeza de pele e peeling são os pilares comerciais, com conteúdos complementares sobre os demais procedimentos.</p></div><div class="stats"><div class="stat"><strong>15</strong><span>Reels para alcance e descoberta</span></div><div class="stat"><strong>20</strong><span>Posts estáticos para confiança e conversão</span></div><div class="stat"><strong>35</strong><span>Conteúdos no ciclo de cinco semanas</span></div></div></div></div></header>
 <main class="shell"><section class="planner">
