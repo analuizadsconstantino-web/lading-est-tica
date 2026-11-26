@@ -507,6 +507,11 @@ main.shell{width:min(960px,100%)!important;padding:30px 26px 55px!important}
 .content-plan{background:#f8f0ea;border:1px solid #eadbd1;border-radius:12px;padding:14px 16px;margin:14px 0}
 .content-plan h4{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#75432f;margin:0 0 7px}
 .content-plan p{font-size:12px;line-height:1.75;color:#4e382e;margin:0;white-space:pre-line}
+
+/* BLOCO DE PAUTA DIÁRIA — EXIBIÇÃO PRIORITÁRIA */
+.content-plan-block{background:#f7eee8!important;border:1px solid #e7d2c4!important;border-left:4px solid #75432f!important;border-radius:12px!important;padding:16px 18px!important;margin:16px 0!important}
+.content-plan-block h4{font-size:11px!important;letter-spacing:.8px!important;color:#4A2415!important;margin:0 0 9px!important}
+.content-plan-block p{font-size:13px!important;line-height:1.8!important;color:#39271f!important;white-space:pre-line!important}
 </style></head><body>
 <header class="hero"><div class="shell">
   <nav class="nav"><div class="brand"><strong>Ana Constantino Estética Integrativa</strong></div><span class="month">DEZEMBRO 2026</span></nav>
@@ -799,10 +804,12 @@ document.addEventListener('DOMContentLoaded',function(){
      if(!heading||!para)return;
      let label=heading.textContent.trim();
      const raw=para.textContent.trim();
-     if(/texto para a arte \/ slides/i.test(label)){
-       const isCarousel=/SLIDE\\s*1\\s*[—-]/i.test(raw);
-       label=isCarousel?'Texto do Imagem única, com texto curto e hierarquia visual clara.createElement('section');block.className='material-block';
-     const h=document.createElement('h4');h.textContent=label;block.appendChild(h);
+     if(/texto para a arte \/ slides|texto da imagem única/i.test(label)){
+       label='Texto da imagem única';
+     }
+     const block=document.createElement('section');block.className='material-block';
+     if(/o que falar e mostrar neste dia/i.test(label))block.classList.add('content-plan-block');
+     const title=document.createElement('h4');title.textContent=label;block.appendChild(title);
      if(/roteiro completo/i.test(label)){
        block.classList.add('script-block');
        const parts=document.createElement('div');parts.className='script-parts';
@@ -813,7 +820,7 @@ document.addEventListener('DOMContentLoaded',function(){
        }
        const rest=raw.slice(last).trim();if(active&&rest){const item=document.createElement('div');item.className='script-part';const b=document.createElement('b');b.textContent=active;const p=document.createElement('p');p.textContent=rest;item.append(b,p);parts.appendChild(item);}
        if(!parts.children.length){const p=document.createElement('p');p.textContent=raw;block.appendChild(p);}else block.appendChild(parts);
-     }else if(/direção de gravação|direção de arte/i.test(label)&&/^\s*1\./m.test(raw)){
+     }else if(/direção de gravação|direção de arte|direção visual/i.test(label)&&/^\s*1\./m.test(raw)){
        const ol=document.createElement('ol');ol.className='direction-list';
        raw.split(/\n/).map(x=>x.trim()).filter(Boolean).forEach(line=>{const li=document.createElement('li');li.textContent=line.replace(/^\d+\.\s*/,'');ol.appendChild(li);});
        block.appendChild(ol);
